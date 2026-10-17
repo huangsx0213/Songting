@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  */
 public class DefaultConfig {
 
-    public static final String DEFAULT_API_URL = "https://amyhkdevtestlab438.blob.core.windows.net/artifacts/dstvbox.json?sp=r&st=2026-10-17T04:33:31Z&se=2096-10-17T12:48:31Z&sv=2026-02-06&sr=b&sig=U3Shvv%2BwNQlcU%2F5eUxkk1y7%2Bpo54sCxoJIoYwBRzIGU%3D";
+    public static final String DEFAULT_API_URL = "https://amyhkdevtestlab438.blob.core.windows.net/artifacts/dstvbox.json?sp=r&st=2026-10-17T22:48:51Z&se=2926-10-18T07:03:51Z&sv=2026-02-06&sr=b&sig=LCmfYkxNlI%2Bp8BGfwNMYNiE1K%2BkxOyFb8Kl3zlSfqEY%3D";
 
     public static List<MovieSort.SortData> adjustSort(String sourceKey, List<MovieSort.SortData> list, boolean withMy) {
         List<MovieSort.SortData> data = new ArrayList<>();
@@ -67,37 +67,37 @@ public class DefaultConfig {
 
     private static final Pattern snifferMatch = Pattern.compile(
             "http((?!http).){12,}?\\.(m3u8|mp4|flv|avi|mkv|rm|wmv|mpg|m4a|mp3|aac|mpd)\\?.*|" +
-            "http((?!http).){12,}\\.(m3u8|mp4|flv|avi|mkv|rm|wmv|mpg|m4a|mp3|aac|mpd)|" +
-            "http((?!http).)*?video/tos*|" +
-            "http((?!http).){20,}?/m3u8\\?pt=m3u8.*|" +
-            "http((?!http).)*?default\\.ixigua\\.com/.*|" +
-            "http((?!http).)*?dycdn-tos\\.pstatp[^\\?]*|" +
-            "http.*?/player/m3u8play\\.php\\?url=.*|" +
-            "http.*?/player/.*?[pP]lay\\.php\\?url=.*|" +
-            "http.*?/playlist/m3u8/\\?vid=.*|" +
-            "http.*?\\.php\\?type=m3u8&.*|" +
-            "http.*?/download.aspx\\?.*|" +
-            "http.*?/api/up_api.php\\?.*|" +
-            "https.*?\\.66yk\\.cn.*|" +
-            "http((?!http).)*?netease\\.com/file/.*"
-    );
+                    "http((?!http).){12,}\\.(m3u8|mp4|flv|avi|mkv|rm|wmv|mpg|m4a|mp3|aac|mpd)|" +
+                    "http((?!http).)*?video/tos*|" +
+                    "http((?!http).){20,}?/m3u8\\?pt=m3u8.*|" +
+                    "http((?!http).)*?default\\.ixigua\\.com/.*|" +
+                    "http((?!http).)*?dycdn-tos\\.pstatp[^\\?]*|" +
+                    "http.*?/player/m3u8play\\.php\\?url=.*|" +
+                    "http.*?/player/.*?[pP]lay\\.php\\?url=.*|" +
+                    "http.*?/playlist/m3u8/\\?vid=.*|" +
+                    "http.*?\\.php\\?type=m3u8&.*|" +
+                    "http.*?/download.aspx\\?.*|" +
+                    "http.*?/api/up_api.php\\?.*|" +
+                    "https.*?\\.66yk\\.cn.*|" +
+                    "http((?!http).)*?netease\\.com/file/.*");
+
     public static boolean isVideoFormat(String url) {
         Uri uri = Uri.parse(url);
         String path = uri.getPath();
         if (TextUtils.isEmpty(path)) {
             return false;
         }
-        if (snifferMatch.matcher(url).find()) return true;
+        if (snifferMatch.matcher(url).find())
+            return true;
         return false;
     }
 
-
     public static String safeJsonString(JsonObject obj, String key, String defaultVal) {
         try {
-            if (obj.has(key)){
-                return obj.get(key).isJsonObject() || obj.get(key).isJsonArray()?obj.get(key).toString().trim():obj.getAsJsonPrimitive(key).getAsString().trim();
-            }
-            else
+            if (obj.has(key)) {
+                return obj.get(key).isJsonObject() || obj.get(key).isJsonArray() ? obj.get(key).toString().trim()
+                        : obj.getAsJsonPrimitive(key).getAsString().trim();
+            } else
                 return defaultVal;
         } catch (Throwable th) {
         }
@@ -139,11 +139,11 @@ public class DefaultConfig {
     }
 
     private static final List<String> NO_AD_KEYWORDS = Arrays.asList(
-            "tx", "youku", "qq","qiyi", "letv", "leshi","sohu", "mgtv", "bilibili", "imgo","优酷", "芒果", "腾讯", "奇艺"
-    );
+            "tx", "youku", "qq", "qiyi", "letv", "leshi", "sohu", "mgtv", "bilibili", "imgo", "优酷", "芒果", "腾讯", "奇艺");
 
     public static boolean noAd(String flag) {
-        if (flag == null || flag.isEmpty()) return false;
+        if (flag == null || flag.isEmpty())
+            return false;
         for (String keyword : NO_AD_KEYWORDS) {
             if (flag.equals(keyword) || flag.contains(keyword)) {
                 return true;

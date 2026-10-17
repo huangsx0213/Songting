@@ -1,4 +1,4 @@
-rootProject.name = "TVBox"
+rootProject.name = "SongTing"
 include ':app'
 include ':player'
 include ':quickjs'
