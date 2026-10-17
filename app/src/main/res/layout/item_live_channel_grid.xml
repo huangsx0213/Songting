@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150mm"
+    android:layout_height="130mm"
+    android:layout_margin="5mm"
+    android:background="@drawable/shape_home_channel_card"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="8mm">
+
+    <ImageView
+        android:id="@+id/ivChannelLogo"
+        android:layout_width="86mm"
+        android:layout_height="58mm"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/tvChannelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4mm"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="19mm" />
+</LinearLayout>

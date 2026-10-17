@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vs_50"
+        android:layout_marginTop="@dimen/vs_10"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/vs_50"
+        android:paddingRight="@dimen/vs_50">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:gravity="left|center_vertical"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ts_30"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHomeMode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/vs_15"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:text="直播"
+            android:textColor="@color/color_02F8E1"
+            android:textSize="@dimen/ts_26" />
+
+        <TextView
+            android:id="@+id/tvHomeWarning"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/vs_20"
+            android:layout_marginRight="@dimen/vs_20"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/color_02F8E1"
+            android:textSize="@dimen/ts_22" />
+
+        <TextView
+            android:id="@+id/tvHomeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ts_26" />
+
+        <TextView
+            android:id="@+id/btnLiveRadio"
+            android:layout_width="@dimen/vs_45"
+            android:layout_height="@dimen/vs_45"
+            android:layout_marginLeft="@dimen/vs_15"
+            android:background="@drawable/button_live_home_nav"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="📻"
+            android:textSize="@dimen/ts_30" />
+
+        <TextView
+            android:id="@+id/btnLiveConfig"
+            android:layout_width="@dimen/vs_45"
+            android:layout_height="@dimen/vs_45"
+            android:layout_marginLeft="@dimen/vs_10"
+            android:background="@drawable/button_live_home_nav"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="⚙"
+            android:textSize="@dimen/ts_30" />
+    </LinearLayout>
+
+    <com.owen.tvrecyclerview.widget.TvRecyclerView
+        android:id="@+id/mHomeGroupView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vs_60"
+        android:layout_marginTop="@dimen/vs_15"
+        android:paddingLeft="@dimen/vs_45"
+        android:paddingRight="@dimen/vs_45"
+        app:tv_selectedItemIsCentered="false" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mHomeChannelView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/vs_15"
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/vs_45"
+        android:paddingRight="@dimen/vs_45"
+        android:scrollbars="none" />
+</LinearLayout>
