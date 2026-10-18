@@ -2,7 +2,7 @@ package com.github.catvod.net;
 
 import androidx.annotation.NonNull;
 
-import com.github.tvbox.osc.util.OkGoHelper;
+import com.github.songting.osc.util.OkGoHelper;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

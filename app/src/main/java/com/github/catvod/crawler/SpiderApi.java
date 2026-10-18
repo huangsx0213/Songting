@@ -8,8 +8,8 @@ import android.util.Base64;
 import android.view.Surface;
 import android.view.WindowManager;
 
-import com.github.tvbox.osc.server.ControlManager;
-import com.github.tvbox.osc.base.App;
+import com.github.songting.osc.server.ControlManager;
+import com.github.songting.osc.base.App;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

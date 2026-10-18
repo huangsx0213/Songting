@@ -104,7 +104,7 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener {
 
     @Override
     public void setDataSource(String path, Map<String, String> headers) {
-        Log.i("Tvbox-runtime","echo-setDataSource:"+path);
+        Log.i("Songting-runtime","echo-setDataSource:"+path);
         currentPlayPath = path;
         currentHeaders = copyHeaders(headers);
         mRetriedAsHls = false;
@@ -300,7 +300,7 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener {
 
     @Override
     public void onPlayerError(PlaybackException error) {
-        Log.e("Tvbox-runtime", "echo-Exo player error: " + currentPlayPath, error);
+        Log.e("Songting-runtime", "echo-Exo player error: " + currentPlayPath, error);
         if (retryAsHls(error)) {
             return;
         }
@@ -317,7 +317,7 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener {
             return false;
         }
         mRetriedAsHls = true;
-        Log.i("Tvbox-runtime", "echo-Exo retry as HLS: " + currentPlayPath);
+        Log.i("Songting-runtime", "echo-Exo retry as HLS: " + currentPlayPath);
         mMediaSource = mMediaSourceHelper.getHlsMediaSource(currentPlayPath, copyHeaders(currentHeaders));
         mIsPreparing = true;
         mInternalPlayer.setMediaSource(mMediaSource, getStartPosition());

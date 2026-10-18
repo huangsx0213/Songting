@@ -3,11 +3,11 @@ package com.github.catvod.crawler;
 
 import android.util.Log;
 
-import com.github.tvbox.osc.base.App;
+import com.github.songting.osc.base.App;
 
-import com.github.tvbox.osc.util.FileUtils;
-import com.github.tvbox.osc.util.LOG;
-import com.github.tvbox.osc.util.MD5;
+import com.github.songting.osc.util.FileUtils;
+import com.github.songting.osc.util.LOG;
+import com.github.songting.osc.util.MD5;
 
 import com.github.catvod.crawler.js.JsSpider;
 import com.lzy.okgo.OkGo;

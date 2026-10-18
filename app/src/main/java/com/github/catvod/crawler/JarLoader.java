@@ -6,11 +6,11 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.github.catvod.net.OkHttp;
-import com.github.tvbox.osc.base.App;
-import com.github.tvbox.osc.server.ControlManager;
-import com.github.tvbox.osc.server.RemoteServer;
-import com.github.tvbox.osc.util.FileUtils;
-import com.github.tvbox.osc.util.MD5;
+import com.github.songting.osc.base.App;
+import com.github.songting.osc.server.ControlManager;
+import com.github.songting.osc.server.RemoteServer;
+import com.github.songting.osc.util.FileUtils;
+import com.github.songting.osc.util.MD5;
 import com.lzy.okgo.OkGo;
 
 import org.json.JSONObject;

@@ -73,8 +73,8 @@ def _java_request(session, method, url, kwargs):
 
 _JAVA_FALLBACK_STATUS = (403, 429, 495, 496, 497, 525, 526, 527)
 
-if not getattr(_session_request, "_tvbox_java_http_fallback", False):
-    def _tvbox_session_request(self, method, url, **kwargs):
+if not getattr(_session_request, "_songting_java_http_fallback", False):
+    def _songting_session_request(self, method, url, **kwargs):
         if _PythonHttp is None or not str(url).lower().startswith("https://") or kwargs.get("stream"):
             return _session_request(self, method, url, **kwargs)
         try:
@@ -85,8 +85,8 @@ if not getattr(_session_request, "_tvbox_java_http_fallback", False):
             response = None
         fallback = _java_request(self, method, url, kwargs)
         return fallback if response is None or fallback.status_code < response.status_code else response
-    _tvbox_session_request._tvbox_java_http_fallback = True
-    requests.sessions.Session.request = _tvbox_session_request
+    _songting_session_request._songting_java_http_fallback = True
+    requests.sessions.Session.request = _songting_session_request
 
 PLUGIN_DOWNLOAD_TIMEOUT = 20
 

@@ -1,6 +1,6 @@
 package com.github.catvod;
 
-import com.github.tvbox.osc.server.RemoteServer;
+import com.github.songting.osc.server.RemoteServer;
 
 public class Proxy {
 
@@ -20,7 +20,7 @@ public class Proxy {
 
     private static String getIp() {
         try {
-            return RemoteServer.getLocalIPAddress(com.github.tvbox.osc.base.App.getInstance());
+            return RemoteServer.getLocalIPAddress(com.github.songting.osc.base.App.getInstance());
         } catch (Throwable th) {
             return "127.0.0.1";
         }

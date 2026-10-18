@@ -26,7 +26,7 @@ import java.util.Map;
 import okhttp3.OkHttpClient;
 
 public final class ExoMediaSourceHelper {
-    public static final String HEADER_FORMAT = "TVBox-Format";
+    public static final String HEADER_FORMAT = "Songting-Format";
 
     private static ExoMediaSourceHelper sInstance;
 
